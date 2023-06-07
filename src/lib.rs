@@ -123,7 +123,7 @@ pub struct Hit {
 
 #[skip_serializing_none]
 #[derive(Serialize, Deserialize, Debug)]
-pub struct Response {
+pub struct SmartAPIResponse {
     pub took: i32,
 
     pub total: i32,
@@ -136,13 +136,13 @@ pub struct Response {
 #[cfg(test)]
 mod test {
     use std::fs;
-    use crate::Response;
+    use crate::SmartAPIResponse;
 
     #[test]
     // #[ignore]
     fn scratch() {
         let data = fs::read_to_string("smartapi.pretty.json").unwrap();
-        let potential_response: serde_json::Result<Response> = serde_json::from_str(data.as_str());
+        let potential_response: serde_json::Result<SmartAPIResponse> = serde_json::from_str(data.as_str());
         match potential_response {
             Err(error) => {
                 println!("{}", error);
