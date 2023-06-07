@@ -1,0 +1,1 @@
+# smartapi-model-rs
