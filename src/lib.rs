@@ -135,8 +135,8 @@ pub struct Response {
 
 #[cfg(test)]
 mod test {
-    use crate::smart_api_model::Response;
     use std::fs;
+    use crate::Response;
 
     #[test]
     // #[ignore]
