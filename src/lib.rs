@@ -94,7 +94,8 @@ pub struct Info {
 pub struct Server {
     pub url: String,
 
-    pub x_maturity: Option<String>,
+    #[serde(rename = "x-maturity")]
+    pub x_maturity: String,
 
     pub description: Option<String>,
 }
