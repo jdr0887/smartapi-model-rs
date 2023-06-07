@@ -8,7 +8,7 @@ use std::collections::HashMap;
 #[skip_serializing_none]
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize, JsonSchema)]
 pub struct Contact {
-    pub email: Option<String>,
+    pub email: String,
 
     pub name: Option<String>,
 
@@ -20,17 +20,17 @@ pub struct Contact {
 #[skip_serializing_none]
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize, JsonSchema)]
 pub struct License {
-    pub name: Option<String>,
+    pub name: String,
 
-    pub url: Option<String>,
+    pub url: String,
 }
 
 #[skip_serializing_none]
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize, JsonSchema)]
 pub struct ExternalDocs {
-    pub description: Option<String>,
+    pub description: String,
 
-    pub url: Option<String>,
+    pub url: String,
 }
 
 #[skip_serializing_none]
@@ -54,13 +54,13 @@ pub struct XTrapi {
     #[serde(rename = "externalDocs")]
     pub external_docs: Option<ExternalDocs>,
 
-    pub operations: Option<Vec<String>>,
+    pub operations: Vec<String>,
 
     pub rate_limit: Option<i32>,
 
     pub test_data_location: Option<Value>,
 
-    pub version: Option<String>,
+    pub version: String,
 }
 
 #[skip_serializing_none]
@@ -87,19 +87,19 @@ pub struct Info {
 #[skip_serializing_none]
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize, JsonSchema)]
 pub struct Server {
-    pub description: Option<String>,
-
-    pub url: Option<String>,
+    pub url: String,
 
     pub x_maturity: Option<String>,
+
+    pub description: Option<String>,
 }
 
 #[skip_serializing_none]
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize, JsonSchema)]
 pub struct Tag {
-    pub description: Option<String>,
+    pub name: String,
 
-    pub name: Option<String>,
+    pub description: Option<String>,
 }
 
 #[skip_serializing_none]
