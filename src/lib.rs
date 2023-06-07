@@ -36,9 +36,14 @@ pub struct ExternalDocs {
 #[skip_serializing_none]
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize, JsonSchema)]
 pub struct XTranslator {
-    pub biolink_version: Option<String>,
+    pub infores: String,
 
-    pub component: Option<String>,
+    pub team: Vec<String>,
+
+    pub component: String,
+
+    #[serde(rename = "biolink-version")]
+    pub biolink_version: Option<String>,
 
     #[serde(rename = "externalDocs")]
     pub external_docs: Option<ExternalDocs>,
